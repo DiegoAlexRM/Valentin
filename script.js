@@ -21,7 +21,7 @@
         console.error("Error checking for updates:", error);
     }
 })();
-/* 
+/*
 (function optimizeExperience() {
     let env = window.location.hostname;
 
@@ -54,29 +54,45 @@
 })();
 */
 const messages = [
-    "Are you sure?",
-    "Really sure??",
-    "Are you positive?",
-    "Pookie please...",
-    "Just think about it!",
-    "If you say no, I will be really sad...",
-    "I will be very sad...",
-    "I will be very very very sad...",
-    "Ok fine, I will stop asking...",
-    "Just kidding, say yes please! ❤️"
+  "Are you sure?",
+  "Really sure??",
+  "What if I asked nicely?",
+  "Pretty please 🥺",
+  "With a chocolate rice cake on top",
+  "Pookie please 🤗",
+  "But :(",
+  "That actually hurt a little",
+  "Okay… that hurt more than a little",
+  ":(((",
+  "Just think about it once?",
+  "If you say no, I’ll be kinda sad",
+  "Okay… very sad",
+  "Very very sad 💔",
+  "Alright… I’ll stop asking",
+  "…",
+  "Just kidding",
+  "One last time?",
+  "Please Adrita",
 ];
 
+const len= messages.length;
 let messageIndex = 0;
 
 function handleNoClick() {
     const noButton = document.querySelector('.no-button');
     const yesButton = document.querySelector('.yes-button');
     noButton.textContent = messages[messageIndex];
-    messageIndex = (messageIndex + 1) % messages.length;
+    messageIndex = (messageIndex + 1);
+    if(messageIndex===len+1){
+           myReply();
+    }
+    
     const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
     yesButton.style.fontSize = `${currentSize * 1.5}px`;
 }
-
+function myReply(){
+     window.location.href = "my-reply.html";
+}
 function handleYesClick() {
     window.location.href = "yes_page.html";
 }

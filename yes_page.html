@@ -2,16 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Knew you would say yes!</title>
-    <link rel="stylesheet" href="./yes_style.css">
+    <title>YES 💖</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #fce7f3, #e0f2fe);
+            font-family: "Segoe UI", sans-serif;
+            color: #444;
+            text-align: center;
+        }
+
+        .heart {
+            font-size: 110px;
+            animation: beat 1s infinite;
+        }
+
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        .text {
+            font-size: 28px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .subtext {
+            font-size: 18px;
+            margin-top: 8px;
+            opacity: 0.85;
+        }
+
+        /* Confetti */
+        .confetti {
+            position: absolute;
+            width: 8px;
+            height: 14px;
+            background: pink;
+            top: -20px;
+            animation: fall linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="header_text">Knew you would say yes!</h1>
+
+   <h1 class="header_text">Knew you would say yes!</h1>
         <div class="gif_container">
             <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo3c3l5ODh3ZGN6NHhhaDE2Mjg1ZjkwOXczdDFxbWM3dTBtaW9zaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif">
         </div>
-    </div>
+    <script>
+        const colors = [
+            "#f9a8d4", // pink
+            "#c7d2fe", // lavender
+            "#bae6fd", // pastel blue
+            "#bbf7d0", // mint
+            "#fde68a"  // soft yellow
+        ];
+
+        for (let i = 0; i < 120; i++) {
+            const confetti = document.createElement("div");
+            confetti.classList.add("confetti");
+            confetti.style.left = Math.random() * 100 + "vw";
+            confetti.style.animationDuration = (3 + Math.random() * 4) + "s";
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+            document.body.appendChild(confetti);
+        }
+    </script>
+
 </body>
 </html>
