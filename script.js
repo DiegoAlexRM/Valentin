@@ -54,16 +54,16 @@
 })();
 */
 const messages = [
-    "Are you sure?",
-    "Really sure??",
-    "Are you positive?",
-    "Pookie please...",
-    "Just think about it!",
-    "If you say no, I will be really sad...",
-    "I will be very sad...",
-    "I will be very very very sad...",
-    "Ok fine, I will stop asking...",
-    "Just kidding, say yes please! ❤️"
+    "Oe :v tas segura?",
+    "XD no me loquees :v",
+    "Yaya una oportunidad mas",
+    "XD es la ultima",
+    "1 mas y desaparece el boton",
+    "Le wa decir a tu mama ah xd",
+    "Oe xd",
+    "Listo, hoy no salimos a comer xd",
+    "Presionas y no hay regalo de cumpleaños",
+    "Ya no wa decir na XD presiona y 0 enchiladas"
 ];
 
 let messageIndex = 0;
